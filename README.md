@@ -1,24 +1,29 @@
-# Planificador de materiales con kardex
+# Planificador de materiales con kardex · ET505 S9
 
-## Propósito
-Aplicación académica para planificar materiales para afiches sobre el cuidado del agua y registrar existencias físicas ficticias. No registra compras reales.
+Proyecto individual basado en el planificador de Semana 7. Permite simular pedidos para afiches sobre el cuidado del agua y llevar el kardex de materiales ficticios.
+
+## Aplicación publicada
+- Repositorio: https://github.com/RaulHidalgo61/planificador-materiales-s9
+- GitHub Pages: https://raulhidalgo61.github.io/planificador-materiales-s9/
 
 ## Archivos
-- `index.html`: conserva el planificador S7 y agrega la sección `#kardex` después del pedido; conserva los IDs `k-*` y evita formularios anidados.
-- `styles.css`: conserva los estilos S7 y añade la personalización S9. La etiqueta usa 1.1rem en negrita y los botones usan azul RGB `rgb(30,64,175)`.
-- `app.js`: conserva cálculo en céntimos, presupuesto S/ 180.00 y validación del planificador S7.
-- `kardex.js`: gestiona materiales, búsqueda, renombrado por ID, entradas/salidas, saldo, inactivación/eliminación, localStorage y exportación CSV. Ejemplos: `MAT-001` y `MAT-002`.
+- `index.html`: conserva el planificador S7 e integra la sección `#kardex` con IDs `k-*`.
+- `styles.css`: conserva estilos S7 y añade etiqueta de 1.1rem y paleta azul `rgb(30,64,175)`.
+- `app.js`: cálculo en céntimos, presupuesto S/ 180.00 y validación del pedido S7.
+- `kardex.js`: materiales con IDs estables, búsqueda, cambio de nombre, movimientos, saldo, inactivación/eliminación, localStorage y exportación CSV.
 
 ## Uso y límites
-Mantén los cinco archivos juntos y abre `index.html` en un navegador moderno. El saldo representa unidades físicas y es independiente del presupuesto monetario. Los datos viven sólo en el navegador y origen actuales; no se comparten. El CSV es una copia, no sincroniza Excel.
+Los saldos son unidades físicas y no cambian el presupuesto. Los datos son ficticios. `localStorage` pertenece al navegador y al origen actuales; no se comparte entre navegadores ni se sincroniza con una base común. El CSV es una copia descargable, no una sincronización con Excel.
 
-## Publicación
-Repositorio GitHub: pendiente de crear.
-GitHub Pages: pendiente de publicar y comprobar. Publica juntos los cinco archivos de este proyecto.
+## Comprobaciones documentadas
+- Entrada 10 y salida 3: saldo 7.
+- Salida 8 con saldo 7: rechazada, conserva saldo e historial.
+- Cantidades 0, negativas y decimales: rechazadas.
+- Búsqueda sin coincidencias, renombrado por ID, cancelación de eliminación e inactivación con historial: comprobados en Microsoft Edge.
+- Recarga conserva movimientos; selección debe volver a elegirse.
+- CSV abierto en Excel con ENTRADA 10 y SALIDA 3.
+- Planificador: pedido de 4 × S/ 12.50 muestra total S/ 50.00 y saldo S/ 130.00. Los botones Comprobar y Confirmar rechazan un pedido de S/ 200.00 y conservan el último válido.
 
-## Aportes y fuentes
-Proyecto base: trabajo individual de Semana 7. Integración adaptada del recurso docente «Fragmentos de integración · ET505 · S9» (`kardex.html`, `kardex.js`, `personalizacion.css`, `MAPA_RECURSOS.md`, `LEEME.txt`).
-
-Ayuda de IA: OpenAI Codex, 29/10/2026. Se consultó la consigna, la integración de los recursos S7/S9 y la rúbrica. Se aprovechó la revisión de dependencias, organización e integración inicial. El estudiante debe ejecutar las pruebas y documentar sus resultados reales en el PDF.
-
-Publicación: [Configurar una fuente de publicación de GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+## Aportes y ayuda
+Trabajo individual. Proyecto base: Semana 7; integración adaptada del recurso docente «Fragmentos de integración · ET505 · S9».
+Ayuda recibida: OpenAI Codex, 29–30/10/2026. Se usó para revisar la consigna, mapear dependencias del fragmento, integrar el kardex y preparar pruebas/documentación. El estudiante adaptó el proyecto, publicó el sitio y ejecutó las comprobaciones descritas. Se corrigió el texto «Use al menos 3 caracteres» y se revisó la expectativa del encabezado CSV entrecomillado.
